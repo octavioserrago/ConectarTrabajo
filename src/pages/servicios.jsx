@@ -1,14 +1,13 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 
-const CustomerDashboard = () => {
+const servicios = () => {
     return (
-        <div className="customerDashboard-page">
+        <div className="TodosServicios-page">
             <Navbar />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
-
                     </div>
                 </div>
             </div>
@@ -16,4 +15,4 @@ const CustomerDashboard = () => {
     );
 };
 
-export default CustomerDashboard;
+export default servicios;

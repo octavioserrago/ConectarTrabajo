@@ -11,7 +11,7 @@ const Login = () => {
     const [error, setError] = useState('');
 
     const handlerLogin = async (e) => {
-        e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+        e.preventDefault();
 
         try {
             const response = await axios.post("http://localhost:8888/auth/login", {
@@ -22,17 +22,16 @@ const Login = () => {
             const { success, message, user } = response.data;
 
             if (success) {
-                // Aquí podrías manejar la respuesta según tus necesidades
                 console.log(message);
-                console.log(user); // Puedes almacenar el usuario en el contexto de autenticación si es necesario
-                login(user); // Ejemplo: almacenar el usuario en el contexto de autenticación
-                navigate('/dashboard'); // Redirigir a la página de dashboard u otra página
+                console.log(user);
+                login(user);
+                navigate('/dashboard');
             } else {
-                setError(message); // Mostrar mensaje de error si las credenciales son incorrectas
+                setError(message);
             }
         } catch (error) {
             console.error("Error en la solicitud de login:", error);
-            setError('Error interno del servidor'); // Mostrar error genérico en caso de fallo de conexión o servidor
+            setError('Error interno del servidor');
         }
     };
 
